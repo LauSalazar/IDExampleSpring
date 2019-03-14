@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="
+	http://www.springframework.org/schema/beans 
+	http://www.springframework.org/schema/beans/spring-beans.xsd
+	http://www.springframework.org/schema/context
+	http://www.springframework.org/schema/context/spring-context.xsd">
+	
+	<bean id="leftArm" class="domain.ArmImpl">
+		<property name="type" value="left"></property>
+	</bean>
+	
+	<bean id="rigthArm" class="domain.ArmImpl">
+		<property name="type" value="rigth"></property>
+	</bean>
+	
+	<bean id="leftLeg" class="domain.LegImpl">
+		<property name="type" value="left"></property>
+	</bean>
+	
+	<bean id="rigthLeg" class="domain.LegImpl">
+		<property name="type" value="rigth"></property>
+	</bean>
+	
+	<bean id="headRobot" class="domain.HeadImpl"/>
+	
+	<bean id="robot" class="domain.RobotImpl">
+		<property name="leftArm" ref="leftArm" />
+		<property name="rigthArm" ref="rigthArm" />
+		<property name="leftLeg" ref="leftLeg" />
+		<property name="rigthLeg" ref="rigthLeg" />
+		<property name="head" ref="headRobot" />
+	</bean>
+
+
+</beans>
